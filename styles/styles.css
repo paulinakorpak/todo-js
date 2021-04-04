@@ -1,0 +1,43 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+.app .todo {
+  width: 100%;
+  margin-top: 2rem;
+}
+.app .todo figure {
+  margin-bottom: 1rem;
+}
+.app .todo header {
+  width: 100%;
+}
+.app .todo header input {
+  height: 50px;
+}
+.app .todo main {
+  width: 100%;
+}
+.app .todo main ul li div label {
+  margin-left: 1rem;
+}
+.app .todo main ul li div button {
+  opacity: 0;
+}
+.app .todo main ul li div:hover button {
+  opacity: 1;
+}
+.app .todo footer {
+  width: 100%;
+}
+.app .todo footer div a {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .app .todo {
+    margin-top: 5rem;
+    max-width: 50%;
+  }
+}
