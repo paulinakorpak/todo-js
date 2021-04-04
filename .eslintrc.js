@@ -13,5 +13,6 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
+    'no-param-reassign': ['error', { props: false }],
   },
 };
