@@ -2,7 +2,7 @@ import { template } from './template';
 
 export const TodoItem = (title) => {
   const state = {
-    id: Date.now(),
+    id: Date.now().toString(),
     title,
     completed: false,
   };
@@ -17,5 +17,7 @@ export const TodoItem = (title) => {
     render(element);
   };
 
-  return { render };
+  const getId = () => state.id;
+
+  return { render, getId };
 };

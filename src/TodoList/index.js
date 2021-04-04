@@ -8,6 +8,13 @@ export const TodoList = (element) => {
     render();
   };
 
+  const deleteTodoItem = (e) => {
+    const { id } = e.target.closest('div').dataset;
+    state.todoItems = state.todoItems.filter((todoItem) => todoItem.getId() !== id);
+
+    render();
+  };
+
   const render = () => {
     element.innerHTML = '';
 
@@ -17,6 +24,10 @@ export const TodoList = (element) => {
       element.appendChild(liElement);
 
       todoItem.render(liElement);
+    });
+
+    Array.from(element.querySelectorAll('.delete')).forEach((button) => {
+      button.addEventListener('click', deleteTodoItem);
     });
   };
 
