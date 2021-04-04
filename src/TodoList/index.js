@@ -1,6 +1,7 @@
 export const TodoList = (element) => {
   const state = {
     todoItems: [],
+    filter: 'all',
   };
 
   const createTodoItem = (todoItem) => {
@@ -15,10 +16,28 @@ export const TodoList = (element) => {
     render();
   };
 
+  const setFilter = (filter) => {
+    state.filter = filter;
+    render();
+  };
+
+  const filterTodoItems = () => {
+    if (state.filter === 'done') {
+      return state.todoItems.filter((todoItem) => todoItem.isCompleted());
+    }
+    if (state.filter === 'active') {
+      return state.todoItems.filter((todoItem) => !todoItem.isCompleted());
+    }
+
+    return state.todoItems;
+  };
+
   const render = () => {
     element.innerHTML = '';
 
-    state.todoItems.forEach((todoItem) => {
+    const todoItems = filterTodoItems();
+
+    todoItems.forEach((todoItem) => {
       const liElement = document.createElement('li');
       liElement.classList.add('list-group-item');
       element.appendChild(liElement);
@@ -31,5 +50,5 @@ export const TodoList = (element) => {
     });
   };
 
-  return { createTodoItem, render };
+  return { createTodoItem, setFilter, render };
 };

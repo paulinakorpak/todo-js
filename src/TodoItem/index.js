@@ -18,6 +18,7 @@ export const TodoItem = (title) => {
   };
 
   const getId = () => state.id;
+  const isCompleted = () => state.completed;
 
-  return { render, getId };
+  return { render, getId, isCompleted };
 };
