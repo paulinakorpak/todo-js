@@ -1,0 +1,10 @@
+$primary: #BFA3A9;
+$secondary: #454B41;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$btn-focus-box-shadow: none;
+
+
+@import './styles';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
