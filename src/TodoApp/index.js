@@ -2,12 +2,20 @@ import { TodoForm } from '../TodoForm';
 import { TodoList } from '../TodoList';
 
 export const TodoApp = (element) => {
-  const init = () => {
-    const todoForm = element.querySelector('header input');
-    TodoForm(todoForm).init();
+  let todoForm;
+  let todoList;
 
-    const todoList = element.querySelector('ul');
-    TodoList(todoList);
+  const init = () => {
+    const formElement = element.querySelector('header input');
+    todoForm = TodoForm(formElement, createTodoItem);
+    todoForm.init(createTodoItem);
+
+    const listElement = element.querySelector('ul');
+    todoList = TodoList(listElement);
+  };
+
+  const createTodoItem = (todoItem) => {
+    todoList.createTodoItem(todoItem);
   };
 
   return { init };

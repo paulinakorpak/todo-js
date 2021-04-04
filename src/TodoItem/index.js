@@ -1,7 +1,7 @@
-export const TodoItem = () => {
+export const TodoItem = (title) => {
   const state = {
-    id: '',
-    title: '',
+    id: Date.now(),
+    title,
     completed: false,
   };
 };
